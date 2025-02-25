@@ -32,8 +32,8 @@ export function OAuthButtons() {
           key={provider.name}
           className="w-full flex items-center justify-center gap-2 text-sm"
           variant="outline"
+          disabled={true}
           onClick={async () => {
-            console.log("clicked")
             await oAuthSignIn(provider.name)
           }}
         >

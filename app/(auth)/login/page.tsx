@@ -28,6 +28,7 @@ export default function AuthPage() {
         setSuccess("Login successful!")
       }
     } catch (err) {
+      console.log(err)
       setError("Login failed. Please check your credentials.")
     } finally {
       setIsLoading(false)
@@ -47,6 +48,7 @@ export default function AuthPage() {
         setSuccess("Signup successful! Please check your email to verify your account.")
       }
     } catch (err) {
+      console.log(err)
       setError("Signup failed. Please try again.")
     } finally {
       setIsLoading(false)
