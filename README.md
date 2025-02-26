@@ -2,7 +2,7 @@
 
 A comprehensive AI-powered system that integrates multiple AI capabilities to enhance sales and customer relationship management. The system includes AI-driven lead generation, personalized email outreach, meeting analysis, and a knowledge base.
 
-![System Architecture](./docs/system-architecture.png)
+![System Architecture](https://app.eraser.io/workspace/NjlgvzEzm0bygGKFcO9f?origin=share)
 
 ## Table of Contents
 
@@ -14,8 +14,10 @@ A comprehensive AI-powered system that integrates multiple AI capabilities to en
   - [Frontend Setup](#frontend-setup)
 - [Configuration](#configuration)
 - [Usage](#usage)
+- [Testing the System](#testing-the-system)
 - [API Documentation](#api-documentation)
 - [Architecture](#architecture)
+- [Known Issues & Troubleshooting](#known-issues--troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -75,7 +77,7 @@ You can set up this project using Docker Compose (recommended) or manual install
 1. Clone the repository:
    ```bash
    git clone https://github.com/mohdjami/ai-sdr.git
-   cd ai-sdr-system/backend
+   cd ai-sdr/backend
    ```
 
 2. Create environment variables file:
@@ -94,8 +96,8 @@ You can set up this project using Docker Compose (recommended) or manual install
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ai-sdr-system.git
-   cd ai-sdr-system/backend
+   git clone https://github.com/mohdjami/ai-sdr.git
+   cd ai-sdr/backend
    ```
 
 2. Create a virtual environment:
@@ -130,7 +132,7 @@ You can set up this project using Docker Compose (recommended) or manual install
 
 1. Navigate to the frontend directory:
    ```bash
-   cd ai-sdr-system/frontend
+   cd ai-sdr/frontend
    ```
 
 2. Install dependencies:
@@ -210,6 +212,36 @@ After installation and configuration, the system will be accessible at:
 5. **Schedule meetings** with interested prospects
 6. **View meeting transcripts and insights** in the Knowledge Base tab
 
+## Testing the System
+
+You can test the system using the following credentials:
+
+**Login Credentials:**
+- Email: jamikhann7@gmail.com
+- Password: abcd1234
+
+### Testing Workflow
+
+1. **Login** using the credentials above
+2. **Find leads** by going to the Prospects tab
+3. **Draft emails** for any prospect you find interesting
+4. **Track replies** in the Reply Tracker (demo data will be shown)
+5. **Schedule meetings** and add bots to test the transcription feature
+
+> **Note**: When adding a meeting bot, please be patient as it takes approximately 1 minute for the bot to join the meeting and begin processing.
+
+### Test Meetings
+
+For testing the meeting bot feature, you can use the following steps:
+
+1. Create a Zoom/Google Meet/Microsoft Teams meeting
+2. On the Meetings tab, click "Add Bot to Meeting"
+3. Paste your meeting URL and provide a title
+4. Click "Add Bot" and wait approximately 1 minute for the bot to join
+5. You'll receive a notification once the bot has successfully joined
+6. Conduct your meeting as normal
+7. After the meeting, transcripts and insights will be available in the Knowledge Base
+
 ## API Documentation
 
 The API documentation is available at `http://localhost:8000/docs` when the backend is running.
@@ -255,6 +287,24 @@ The system is built with a microservices architecture:
    - Key insights extracted and summarized
    - Meeting data stored in vector database
    - Users search and retrieve meeting knowledge
+
+## Known Issues & Troubleshooting
+
+### Meeting Bot Issues
+
+- **Bot Joining Delay**: The bot typically takes around 1 minute to join meetings. Please be patient after adding a bot.
+- **Audio Quality**: Ensure good audio quality during meetings for optimal transcription results.
+- **Connection Issues**: If the bot fails to join, check your meeting URL and try again.
+
+### LinkedIn Scraper
+
+- **Rate Limiting**: The LinkedIn scraper may encounter rate limiting. If this happens, wait 15-30 minutes before trying again.
+- **Login Issues**: If the LinkedIn scraper fails to log in, check your LinkedIn credentials in the `.env` file.
+
+### Email Generation
+
+- **Long Response Times**: The email generation process may take 15-30 seconds depending on the LLM service load.
+- **API Key Issues**: If email generation fails, verify your LLM API key is correct and has sufficient credits.
 
 ## Contributing
 

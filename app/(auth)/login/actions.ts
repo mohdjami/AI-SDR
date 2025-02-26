@@ -45,7 +45,6 @@ export async function signup(formData: FormData) {
   }
 
   revalidatePath("/", "layout");
-  redirect("/prospects");
   return { error: null };
 }
 
